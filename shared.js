@@ -10,6 +10,9 @@ let modal = document.querySelector(".modal");
 //select the NO button of the modal in HTML
 let selectNoBtn = document.querySelector("button");
 
+let toggleButton = document.querySelector(".toggle-button");
+let mobileNav = document.querySelector(".mobile-nav");
+
 //console log in the browser the button as HTML code
 //console.log(selectPlanButton)
 //console log in the browser the button as array of objects
@@ -20,20 +23,40 @@ let selectNoBtn = document.querySelector("button");
 
 //to iterate throw the array of button object
 for (let i = 0; i < selectPlanButton.length; i++) {
-  selectPlanButton[i].addEventListener("click", function () {
-    modal.style.display = "block";
-    backdrop.style.display = "block";
+  selectPlanButton[i].addEventListener("click", () => {
+    // modal.style.display = "block";
+    // backdrop.style.display = "block";
+    // modal.className = 'open'; //This will overwrite the complete class list
+    modal.classList.add("open");
+    backdrop.classList.add("open");
   });
 }
 
 //to close modal when pressing on the backdrop area
-backdrop.addEventListener("click", closeModal);
+backdrop.addEventListener("click", () => {
+  // mobileNav.style.display = "none";
+  mobileNav.classList.remove("open");
+  closeModal();
+});
 
 //to close modal when pressing NO button
-selectNoBtn.addEventListener("click", closeModal);
+if (selectNoBtn) {
+  selectNoBtn.addEventListener("click", closeModal);
+}
 
 //helper function
 function closeModal() {
-  modal.style.display = "none";
-  backdrop.style.display = "none";
+  // modal.style.display = "none";
+  // backdrop.style.display = "none";
+  if (selectNoBtn) {
+    modal.classList.remove("open");
+  }
+  backdrop.classList.remove("open");
 }
+
+toggleButton.addEventListener("click", () => {
+  // mobileNav.style.display = "block";
+  // backdrop.style.display = "block";
+  mobileNav.classList.add("open");
+  backdrop.classList.add("open");
+});
