@@ -3,7 +3,8 @@
   /* src: url("anonymousPro-Regular.woff2") format("woff2"),
     url("anonymousPro-Regular.woff") format("woff"),
     url("anonymousPro-Regular.ttf") format("truetype"); */
-src: url("anonymousPro-Regular.ttf") format("truetype");
+  src: url("anonymousPro-Regular.ttf") format("truetype");
+}
 
 main {
   padding-top: 2rem;
