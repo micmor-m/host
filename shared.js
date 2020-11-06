@@ -38,7 +38,7 @@ for (let i = 0; i < selectPlanButton.length; i++) {
 //to close modal when pressing on the backdrop area
 backdrop.addEventListener("click", () => {
   // mobileNav.style.display = "none";
-  mobileNav.classList.remove("open__nav");
+  mobileNav.classList.remove("open");
   closeModal();
 });
 
@@ -64,7 +64,7 @@ function closeModal() {
 toggleButton.addEventListener("click", () => {
   // mobileNav.style.display = "block";
   // backdrop.style.display = "block";
-  mobileNav.classList.add("open__nav");
+  mobileNav.classList.add("open");
   backdrop.style.display = "block";
   setTimeout(() => {
     backdrop.classList.add("open");
