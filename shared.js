@@ -28,14 +28,17 @@ for (let i = 0; i < selectPlanButton.length; i++) {
     // backdrop.style.display = "block";
     // modal.className = 'open'; //This will overwrite the complete class list
     modal.classList.add("open");
-    backdrop.classList.add("open");
+    backdrop.style.display = "block";
+    setTimeout(() => {
+      backdrop.classList.add("open");
+    }, 10);
   });
 }
 
 //to close modal when pressing on the backdrop area
 backdrop.addEventListener("click", () => {
   // mobileNav.style.display = "none";
-  mobileNav.classList.remove("open");
+  mobileNav.classList.remove("open__nav");
   closeModal();
 });
 
@@ -52,11 +55,18 @@ function closeModal() {
     modal.classList.remove("open");
   }
   backdrop.classList.remove("open");
+
+  setTimeout(() => {
+    backdrop.style.display = "none";
+  }, 200);
 }
 
 toggleButton.addEventListener("click", () => {
   // mobileNav.style.display = "block";
   // backdrop.style.display = "block";
-  mobileNav.classList.add("open");
-  backdrop.classList.add("open");
+  mobileNav.classList.add("open__nav");
+  backdrop.style.display = "block";
+  setTimeout(() => {
+    backdrop.classList.add("open");
+  }, 10);
 });

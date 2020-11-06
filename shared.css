@@ -27,6 +27,8 @@ main {
 .backdrop {
   position: fixed;
   display: none;
+  opacity: 0;
+  transition: opacity 200ms linear;
   top: 0;
   left: 0;
   z-index: 100;
@@ -174,8 +176,11 @@ main {
 }
 
 .mobile-nav {
-  display: none;
+  /* display: none; */
   position: fixed;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 200ms, transform 200ms ease-out;
   z-index: 101;
   top: 0;
   left: 0;
@@ -234,6 +239,14 @@ main {
 
 .open {
   display: block !important;
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.open__nav {
+  /* display: block !important; */
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 @media (min-width: 40rem) {
