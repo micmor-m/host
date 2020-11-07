@@ -12,7 +12,7 @@ let selectNoBtn = document.querySelector("button");
 
 let toggleButton = document.querySelector(".toggle-button");
 let mobileNav = document.querySelector(".mobile-nav");
-let ctaButton = document.querySelector();
+let ctaButton = document.querySelector(".main-nav__item--cta");
 
 //console log in the browser the button as HTML code
 //console.log(selectPlanButton)
@@ -70,4 +70,16 @@ toggleButton.addEventListener("click", () => {
   setTimeout(() => {
     backdrop.classList.add("open");
   }, 10);
+});
+
+ctaButton.addEventListener("animationstart", (event) => {
+  console.log("Animation started", event);
+});
+
+ctaButton.addEventListener("animationend", (event) => {
+  console.log("Animation ended", event);
+});
+
+ctaButton.addEventListener("animationiteration", (event) => {
+  console.log("Animation iteration", event);
 });
