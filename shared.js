@@ -12,6 +12,7 @@ let selectNoBtn = document.querySelector("button");
 
 let toggleButton = document.querySelector(".toggle-button");
 let mobileNav = document.querySelector(".mobile-nav");
+let ctaButton = document.querySelector();
 
 //console log in the browser the button as HTML code
 //console.log(selectPlanButton)
